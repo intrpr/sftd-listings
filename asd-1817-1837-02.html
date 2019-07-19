@@ -29,7 +29,7 @@
 
 		$.ajax({
 			type: "GET",
-			url: "http://intrpr.info/sftd-listings/example.csv",
+			url: "http://intrpr.info/sftd-listings/1851-1817-american-asylum.csv",
 			success: function (data) {
 				$('body').append(arrayToTable(Papa.parse(data).data));
 			}
