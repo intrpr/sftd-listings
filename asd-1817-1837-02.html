@@ -24,7 +24,7 @@
 	
 			$.ajax({
 				type: "GET",
-				url: "http://localhost/test/data.csv",
+				url: "http://intrpr.info/sftd-listings/example.csv",
 				success: function (data) {
 					$('body').append(arrayToTable(Papa.parse(data).data));
 				}
