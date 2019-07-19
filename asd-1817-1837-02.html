@@ -7,29 +7,33 @@
 
 
 <body>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
-		<script>
-			function arrayToTable(tableData) {
-				var table = $('<table></table>');
-				$(tableData).each(function (i, rowData) {
-					var row = $('<tr></tr>');
-					$(rowData).each(function (j, cellData) {
-						row.append($('<td>'+cellData+'</td>'));
-					});
-					table.append(row);
+	<p>This listing is pulling from a sample .csv file stored here. Theoretically, then, can create csv files of these school listings rather than tables and use css to mark them up.</p> 
+	<p>https://stackoverflow.com/questions/36104089/read-csv-file-from-a-location-and-display-as-html-table</p>
+	<p>Let's also have a look at https://www.js-tutorials.com/jquery-tutorials/reading-csv-file-using-jquery/</p>
+	<p>Especially this https://github.com/derekeder/csv-to-html-table and from https://derekeder.com/csv_to_html_table/</p>
+	<p>This is a d3.js example http://bl.ocks.org/ndarville/7075823, interesting because I'm interested in data visualization with this project.</p>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+	<script>
+		function arrayToTable(tableData) {
+			var table = $('<table></table>');
+			$(tableData).each(function (i, rowData) {
+				var row = $('<tr></tr>');
+				$(rowData).each(function (j, cellData) {
+					row.append($('<td>'+cellData+'</td>'));
 				});
-				return table;
-			}
-	
-			$.ajax({
-				type: "GET",
-				url: "http://intrpr.info/sftd-listings/example.csv",
-				success: function (data) {
-					$('body').append(arrayToTable(Papa.parse(data).data));
-				}
+				table.append(row);
 			});
-		</script>
-	
+			return table;
+		}
+
+		$.ajax({
+			type: "GET",
+			url: "http://intrpr.info/sftd-listings/example.csv",
+			success: function (data) {
+				$('body').append(arrayToTable(Papa.parse(data).data));
+			}
+		});
+	</script>
 </body>
 </html>
