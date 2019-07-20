@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>Listings of SftD using table markup, Datatables</title>
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
+<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Cutive&display=swap');
+		body { font-size: 100%; font-family: 'Cutive', serif; width: 80%; margin: 3em auto; }
+		.content {  }
+		table { borqqder: 1px solid rgba(255,0,0,1); font-size: .9rem; letter-spacing: .02rem; margin: 1em 0 0 0; }
+		header h1 { font-size: 135%; font-weight: normal; text-align: center; letter-spacing: .05rem; }
+		header h2 { font-size: 105%; font-weight: normal; text-align: center; font-variant: small-caps; letter-spacing: .15rem;}
+		th { vertical-align: top; }
+	</style>
+
+	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			$('#example').DataTable();
+		} );
+	</script>
+</head>
+
+<body class="wide comments example">
+	<a name="top" id="top"></a>
+	<div class="fw-container">
+		<div class="fw-body">
+			<p>This listing is pulling from a sample .csv file stored here. Theoretically, then, can create csv files of these school listings rather than tables and use css to mark them up.</p> 
+			<p>https://stackoverflow.com/questions/36104089/read-csv-file-from-a-location-and-display-as-html-table</p>
+			<p>Let's also have a look at https://www.js-tutorials.com/jquery-tutorials/reading-csv-file-using-jquery/</p>
+			<p>Especially this https://github.com/derekeder/csv-to-html-table and from https://derekeder.com/csv_to_html_table/</p>
+			<p>This is a d3.js example http://bl.ocks.org/ndarville/7075823, interesting because I'm interested in data visualization with this project.</p>
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+			<div class="content">
+				<header>
+					<h1>List of Pupils of the American Asylum</h1>
+					<h2 class="description">from the commencement of the institution in 1817, to may 1851</h2>
+				</header>
+				<script>
+					function arrayToTable(tableData) {
+						var table = $('<table class="table table-responsive-xl"></table>');
+						$(tableData).each(function (i, rowData) {
+							var row = $('<tr></tr>');
+							$(rowData).each(function (j, cellData) {
+								row.append($('<td>'+cellData+'</td>'));
+							});
+							table.append(row);
+						});
+						return table;
+					}
+
+					$.ajax({
+						type: "GET",
+						url: "http://intrpr.info/sftd-listings/1851-1817-american-asylum.csv",
+						success: function (data) {
+							$('body').append(arrayToTable(Papa.parse(data).data));
+						}
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
