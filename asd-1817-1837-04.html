@@ -21,12 +21,17 @@
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 	<script type="text/javascript" language="javascript" src="1851-1817-american-asylum.js"></script>
-	<script type="text/javascript" class="init">
+	<script type="text/javascript">
+		$(document).ready(function() {
+            $('#example').DataTable();
+		} );
+    </script>
+	<script type="text/javascript">
 		$(document).ready(function() {
             $('#example').DataTable();
             "paging": false // https://datatables.net/reference/option/paging // 
 		} );
-	</script>
+    </script>
 </head>
 
 <body class="wide comments example">
