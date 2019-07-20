@@ -11,7 +11,7 @@
 		@import url('https://fonts.googleapis.com/css?family=Cutive&display=swap');
 		body { font-size: 100%; font-family: 'Cutive', serif; width: 80%; margin: 3em auto; }
 		.content {  }
-		table { borqqder: 1px solid rgba(255,0,0,1); font-size: .9rem; letter-spacing: .02rem; margin: 2em 0 0 0; }
+		table { borqqder: 1px solid rgba(255,0,0,1); font-size: .9rem; letter-spacing: .02rem; margin: 2em 0; }
         header { margin: 0 0 2em 0; }
 		    header h1 { font-size: 135%; font-weight: normal; text-align: center; letter-spacing: .05rem; }
 		    header h2 { font-size: 105%; font-weight: normal; text-align: center; font-variant: small-caps; letter-spacing: .15rem;}
@@ -23,7 +23,8 @@
 	<script type="text/javascript" language="javascript" src="1851-1817-american-asylum.js"></script>
 	<script type="text/javascript" class="init">
 		$(document).ready(function() {
-			$('#example').DataTable();
+            $('#example').DataTable();
+            "paging": false // https://datatables.net/reference/option/paging // 
 		} );
 	</script>
 </head>
@@ -33,6 +34,10 @@
 	<div class="fw-container">
 		<div class="fw-body">
 			<div class="content">
+                <p>This listing is pulling from a sample .js array (1851-1817-american-asylum.js). Using CSS to mark up table and Bootstrap here.</p> 
+                <p>Process: 1) create csv from hard copy, 2) convert csv to js array (see syntax, it's very similar and just requires quotation marks; https://datatables.net/examples/data_sources/js_array.html)</p>
+                <p>Figure out how to remove pagination but leave search function or change pagination to 'all'</p>
+                <p>This is a d3.js example http://bl.ocks.org/ndarville/7075823, interesting because I'm interested in data visualization with this project.</p>
 				<header>
 					<h1>List of Pupils of the American Asylum</h1>
 					<h2 class="description">from the commencement of the institution in 1817, to may 1851</h2>
