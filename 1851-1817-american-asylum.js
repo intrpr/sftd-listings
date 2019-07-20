@@ -13,12 +13,12 @@ $(document).ready(function() {
             { title: "Residence" },
             { title: "State" },
             { title: "Time of admission" },
-            { title: "Age" }
+            { title: "Age" },
             { title: "Cause of deafness" },
             { title: "Deaf and Dumb relatives" },
             { title: "How supported" },
-            { title: "Time under instruction" }
-            { title: "Remarks" }
+            { title: "Time under instruction" },
+            { title: "Remarks" },
         ]
     } );
 } );
