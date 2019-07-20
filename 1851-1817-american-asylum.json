@@ -1,0 +1,41 @@
+[
+ {
+   "Last": "Abbott",
+   "First": "Laura",
+   "Residence": "Lyndeborough",
+   "State": "N.H.",
+   "Time of admission": 1829,
+   "Age": 18,
+   "Cause of deafness": "Illness at 1 1/2 years",
+   "Deaf and Dumb relatives": "-",
+   "How supported": "N. Hamp.",
+   "Time under instruction": "4 yrs.",
+   "Remarks": "Married a deaf mute."
+ },
+ {
+   "Last": "Abell",
+   "First": "Chloe",
+   "Residence": "St. Albans",
+   "State": "Vt.",
+   "Time of admission": 1829,
+   "Age": 18,
+   "Cause of deafness": "Dis. in the head at 8 mo.",
+   "Deaf and Dumb relatives": "-",
+   "How supported": "Vermont",
+   "Time under instruction": "4 yrs.",
+   "Remarks": "Married a deaf mute; dead"
+ },
+ {
+   "Last": "Aiken",
+   "First": "Mary",
+   "Residence": "Londonderry",
+   "State": "Vt.",
+   "Time of admission": 1827,
+   "Age": 15,
+   "Cause of deafness": "Scarlet fever at 4 years",
+   "Deaf and Dumb relatives": "-",
+   "How supported": "Vermont",
+   "Time under instruction": "4 yrs.",
+   "Remarks": ""
+ }
+]
